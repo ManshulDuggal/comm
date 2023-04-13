@@ -18,7 +18,7 @@ interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
   onSubmit: () => void;
-  title?: string;
+  title?: React.ReactElement;
   body?: React.ReactElement;
   actionLabel?: string;
   footer?: React.ReactElement;
@@ -115,14 +115,11 @@ fixed inset-0 z-60 outline-none"
                 onClick={handleClose}
                 className="rounded-full hover:opacity-70 font-extrabold  md:bg-secondrycolor p-1.5  absolute right-6 "
               >
-                <AiOutlineClose  />
+                <AiOutlineClose />
               </button>
             </section>
             <section className="bg-current/40 relative justify-center content-center flex-col  m-auto py-2 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-              labore veniam ea quae hic vel a. Fugiat neque aspernatur in
-              tempora vel laudantium, quaerat vero nisi aperiam numquam cum
-              labore!
+              {body}
               {/* insert body content here */}
               <div className="flex justify-center w-full m-auto space-x-10 my-4">
                 <Button

@@ -1,7 +1,10 @@
 import Clientonly from "./components/Clientonly";
 import Modal from "./components/modals/Modal";
+import RegisterModel from "./components/modals/RegisterModel";
 import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
+
+const font = useInt
 
 export const metadata = {
   title: "Create Next App",
@@ -18,7 +21,7 @@ export default function RootLayout({
       <body>
         <Clientonly>
           <Navbar />
-          <Modal actionLabel="Submit" isOpen title="Login/Signup" />
+          <RegisterModel />
         </Clientonly>
         {children}
       </body>

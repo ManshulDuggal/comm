@@ -1,5 +1,5 @@
 "use client";
-import { FC, useRef, useState } from "react";
+import { FC, useCallback, useRef, useState } from "react";
 
 interface UsermenuProps {}
 
@@ -10,14 +10,16 @@ import ToggleMenu from "./ToggleMenu";
 import { cursorTo } from "readline";
 import { Ref } from "react";
 const Usermenu: FC<UsermenuProps> = ({}) => {
-  const [Toggle, setToggle] = useState(false);
+  const [open, setIsOpen] = useState(false);
 
-  
+  const toggleOpen = useCallback(() => {
+    setIsOpen((value) => !value);
+  }, []);
   const ref = useRef();
   const handler = () => {
-    setToggle(!Toggle);
+    setIsOpen(!open);
 
-    console.log("you clicked me", Toggle);
+    console.log("you clicked me", open);
   };
 
   return (
@@ -26,11 +28,11 @@ const Usermenu: FC<UsermenuProps> = ({}) => {
       <div className="px-2 ">
         <AiOutlineMenu className="font-bold relative" onClick={handler} />
 
-        <div className="aboslute">
-          <ToggleMenu State={Toggle} />
+        <div onClick={toggleOpen} className="aboslute">
+          {open && <ToggleMenu  />}
         </div>
-
       </div>
+
       <div className="">
         <Avatar />
       </div>
