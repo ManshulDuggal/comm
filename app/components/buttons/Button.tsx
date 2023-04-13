@@ -5,10 +5,10 @@ import { IconType } from "react-icons/lib";
 interface ButtonProps {
   //this was passed from the model initially
   //   mouseevents such as click
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   outline?: boolean;
-  label: string;
+  label?: string;
   small?: boolean;
   icon?: IconType;
 }

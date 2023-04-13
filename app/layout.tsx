@@ -4,7 +4,7 @@ import RegisterModel from "./components/modals/RegisterModel";
 import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 
-const font = useInt
+// const font = useInt
 
 export const metadata = {
   title: "Create Next App",
