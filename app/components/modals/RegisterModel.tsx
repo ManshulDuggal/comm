@@ -9,6 +9,8 @@ import Modal from "./Modal";
 import useRegisterModel from "@/app/hooks/useRegisterModel";
 import Heading from "../Heading";
 import BodyContent from "../BodyContent";
+import Footer from "./Footer";
+import Input from "../inputs/Input";
 interface RegisterModelProps {}
 
 const RegisterModel = ({}) => {
@@ -52,11 +54,24 @@ const RegisterModel = ({}) => {
   const bodyContent = (
     <div className="">
       <BodyContent />
+      already have one!
+      <Input
+        register={register}
+        id="email"
+        errors={errors}
+        required
+        label="Email"
+      />
     </div>
   );
   const headingContent = (
     <div className="">
       <Heading />
+    </div>
+  );
+  const footer = (
+    <div className="">
+      <Footer />
     </div>
   );
 
