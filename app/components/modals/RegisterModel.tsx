@@ -11,6 +11,7 @@ import Heading from "../Heading";
 import BodyContent from "../BodyContent";
 import Footer from "./Footer";
 import Input from "../inputs/Input";
+import { toast } from "react-hot-toast";
 interface RegisterModelProps {}
 
 const RegisterModel = ({}) => {
@@ -45,8 +46,8 @@ const RegisterModel = ({}) => {
       .then(() => {
         registerUserModel.onClose();
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        toast.error("something is wrong on our end... its me not you.");
       });
   };
 
@@ -54,13 +55,31 @@ const RegisterModel = ({}) => {
   const bodyContent = (
     <div className="">
       <BodyContent />
-      already have one!
+      Or register
       <Input
         register={register}
         id="email"
+        disabled={isLoading}
         errors={errors}
         required
         label="Email"
+      />
+      <Input
+        register={register}
+        id="name"
+        disabled={isLoading}
+        errors={errors}
+        required
+        label="name"
+      />
+      <Input
+        register={register}
+        id="password"
+        type="password"
+        disabled={isLoading}
+        errors={errors}
+        required
+        label="password"
       />
     </div>
   );

@@ -3,6 +3,7 @@ import Modal from "./components/modals/Modal";
 import RegisterModel from "./components/modals/RegisterModel";
 import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
+import ToasterPoviders from "./providers/ToasterPoviders";
 
 // const font = useInt
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Clientonly>
+          <ToasterPoviders />
           <Navbar />
           <RegisterModel />
         </Clientonly>
